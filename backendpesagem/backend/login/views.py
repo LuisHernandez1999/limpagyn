@@ -20,7 +20,7 @@ class LoginView(APIView):
         password = request.data.get("password")
 
         try:
-            user = CustomUser.objects.get(email=email)  # Busca o usuário pelo e-mail
+            user = CustomUser.objects.get(email=email)  
         except CustomUser.DoesNotExist:
             return Response({"error": "Usuário não encontrado."}, status=status.HTTP_404_NOT_FOUND)
 
